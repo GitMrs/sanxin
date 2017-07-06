@@ -1,0 +1,45 @@
+<div class="left">
+	<div class="top">
+		<h2>三鑫智慧社区</h2>
+		<p>公共管理平台</p>
+		<p><img src="./img/header.png"" alt="" /></p>
+		<span>管理员 张鑫</span>
+    </div>
+	<div class="item">
+		<p  data-toggle="collapse" data-target="#list">kjad</p>
+		<ul class="collapse" id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+
+		</ul>
+	</div>
+</div>
+<div class="right">
+	<div class="containner">
+		<div class="row">
+			<div class="col-md-12">
+					<ul class="nav nav-tabs">
+					<li role="presentation" ><a href="#">一口式受理平台</a></li>
+					<li role="presentation"><a href="#">网络化管理平台</a></li>
+					<li role="presentation"><a href="#" class="active">公共服务平台</a></li>
+					<li role="presentation"><a href="#">网络化管理平台</a></li>
+				</ul>
+			</div>
+			<div class="col-md-12">
+				<p>...>社区社区</p>
+				<div class="btn">
+					<a ui-sref="index.message"><span ng-class="{active:state==1}" ng-click="nav(1)">信息管理</span></a>
+					<a ui-sref="index.play"><span ng-class="{active:state==2}" ng-click="nav(2)">活动管理</span></a>
+				</div>
+			</div>
+			<div class="col-md-12" ui-view>
+				
+			</div>
+		</div>
+	</div>
+</div>
