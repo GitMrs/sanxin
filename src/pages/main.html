@@ -1,3 +1,4 @@
+
 <div class="left">
 	<div class="top">
 		<h2>三鑫智慧社区</h2>
@@ -5,17 +6,10 @@
 		<p><img src="./img/header.png"" alt="" /></p>
 		<span>管理员 张鑫</span>
     </div>
-	<div class="item">
-		<p  data-toggle="collapse" data-target="#list">kjad</p>
-		<ul class="collapse" id="list">
-			<li>1</li>
-			<li>2</li>
-			<li>2</li>
-			<li>2</li>
-			<li>2</li>
-			<li>2</li>
-			<li>2</li>
-
+	<div class="item" ng-repeat="i in data">
+		<p  data-toggle="collapse" data-target="#{{i.type}}">{{i.name}}</p>
+		<ul class="collapse" id="{{i.type}}">
+			<li ng-repeat="x in i.submenus" >{{x.name}}</li>
 		</ul>
 	</div>
 </div>
@@ -24,10 +18,10 @@
 		<div class="row">
 			<div class="col-md-12">
 					<ul class="nav nav-tabs">
-					<li role="presentation" ><a href="#">一口式受理平台</a></li>
-					<li role="presentation"><a href="#">网络化管理平台</a></li>
-					<li role="presentation"><a href="#" class="active">公共服务平台</a></li>
-					<li role="presentation"><a href="#">网络化管理平台</a></li>
+					<li role="presentation" ><a href="#" ng-class="{active:Tnav==1}" ng-click="Tfn(1)">一口式受理平台</a></li>
+					<li role="presentation"><a href="#"  ng-class="{active:Tnav==2}" ng-click="Tfn(2)">网络化管理平台</a></li>
+					<li role="presentation"><a href="#" ng-class="{active:Tnav==3}"  ng-click="Tfn(3)">公共服务平台</a></li>
+					<li role="presentation"><a href="#" ng-class="{active:Tnav==4}" ng-click="Tfn(4)">网络化管理平台</a></li>
 				</ul>
 			</div>
 			<div class="col-md-12">

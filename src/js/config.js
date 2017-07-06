@@ -3,11 +3,23 @@ app.config(function($stateProvider,$urlRouterProvider){
 		.state({
 			"name":"index",
 			"url":"/index",
-			"templateUrl":"./pages/main.html"
+			"templateUrl":"./pages/main.html",
+            "resolve":{
+                slidelist:function($http){
+                    return $http.get("../mock/entry.json")
+                },
+                packagelist:function($http){
+                    return $http.get("../mock/public.json")
+                }
+            },
+            "controller":"index"
 		})
 		.state("index.message",{
         	url:"/message",
             templateUrl:"./pages/message.html"
+            // controller:function($state){
+            //     console.log($state.go("./index"))
+            // }
         })
         .state("index.play",{
         	url:"play",
@@ -29,5 +41,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         	url:"/summarize",
             templateUrl:"./pages/summarize.html"
         })
-	$urlRouterProvider.otherwise("index")
+	// $urlRouterProvider.otherwise("index.message")
+    $urlRouterProvider.otherwise("index")
+    // console.log($urlRouterProvider.when("index.message","index"))
 })

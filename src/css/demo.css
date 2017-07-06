@@ -10,10 +10,11 @@
     	.left{
     		background:#29282e;
 			width:279px;
-			height:1218px;
+			height:100%;
 			position: fixed;
             left: 0;
             top: 0;
+      overflow-y:auto; 
     	}
     	.left .top{
     		text-align: center;
@@ -60,8 +61,8 @@
     		
     	}
     	.right{
-    		/*position: fixed;*/
-            margin-left: 279px;
+    		position: fixed;
+        left: 279px;
     	}
     	.active{
     		background: mediumturquoise;

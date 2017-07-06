@@ -1,0 +1,64 @@
+{
+  "code": 1,
+  "data": [
+    {
+      "id": "1",
+      "level": 1,
+      "name": "医养服务信息管理",
+      "submenus": [
+        {
+          "id": "1",
+          "level": 3,
+          "name": "社区生日会",
+          "type": "activity",
+          "url":"birthday"
+        },
+        {
+          "id": "2",
+          "level": 3,
+          "name": "社区五保公益",
+          "type": "activity",
+          "url":"five"
+        },
+        {
+          "id": "3",
+          "level": 3,
+          "name": "日间照料中心",
+          "type": "activity",
+          "url":"takecare"
+        }
+      ],
+      "type": "PUBLIC_MEDICAL_CARE"
+    },
+    {
+      "id": "1",
+      "level": 1,
+      "name": "文娱生活信息管理",
+      "submenus": [
+        {
+          "id": "6",
+          "level": 3,
+          "name": "安全教育室",
+          "type": "activity",
+          "url":"safe"
+        },
+        {
+          "id": "7",
+          "level": 3,
+          "name": "科普馆",
+          "type": "activity",
+          "url":"kejiguan"
+        },
+        {
+          "id": "8",
+          "level": 3,
+          "name": "书画室",
+          "type": "activity",
+          "url":"shuhuashi"
+        }
+      ],
+      "type": "PUBLIC_ENTERTAIN"
+    }
+  ],
+  "msg": "SUCCESS"
+}

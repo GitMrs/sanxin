@@ -1,0 +1,64 @@
+{
+  "code": 1,
+  "data": [
+    {
+      "id": "1",
+      "level": 1,
+      "name": "民政事务受理",
+      "submenus": [
+        {
+          "id": "1",
+          "level": 3,
+          "name": "城市居民低保",
+          "subType": "CITY_RESIDENT_ALLOWANCE",
+          "type": "ENTRY_ALLOWANCE_APPLY"
+        },
+        {
+          "id": "2",
+          "level": 3,
+          "name": "农村居民低保",
+          "subType": "COUNTRY_ALLOWANCE",
+          "type": "ENTRY_ALLOWANCE_APPLY"
+        },
+        {
+          "id": "3",
+          "level": 3,
+          "name": "城市低收入家庭",
+          "subType": "CITY_LOW_INCOME_FAMILY",
+          "type": "ENTRY_ALLOWANCE_APPLY"
+        }
+      ],
+      "type": "ENTRY_CIVIL"
+    },
+    {
+      "id": "1",
+      "level": 1,
+      "name": "社区养老服务",
+      "submenus": [
+        {
+          "id": "1",
+          "level": 3,
+          "name": "社区生日会",
+          "type": "entryActivity",
+          "url":"birthday"
+        },
+        {
+          "id": "2",
+          "level": 3,
+          "name": "社区五保公益",
+          "type": "entryActivity",
+          "url":"five"
+        },
+        {
+          "id": "3",
+          "level": 3,
+          "name": "日间照料中心",
+          "type": "entryActivity",
+          "url":"takecare"
+        }
+      ],
+      "type": "ENTRY_MEDICAL_CARE"
+    }
+  ],
+  "msg": "SUCCESS"
+}
