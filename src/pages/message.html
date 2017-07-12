@@ -1,69 +1,52 @@
 <div class="message">
-	<h4>基本信息</h4>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="col-md-6">
-				<input class="form-control" id="disabledInput" type="text" placeholder="张鑫，185020192181" disabled>
-						</div>
-			<div class="col-md-6">
-				<input class="form-control" id="disabledInput" type="text" placeholder="XXXXXX" disabled>
-		</div>
-		</div>
-		<div class="col-md-12">
-			<p>请输入栏目名称</p>
-			<input class="form-control" id="disabledInput" type="text" placeholder="文本框内容">
-		</div>
-		<div class="col-md-12">
-			<div class="title">
-				 <b>请输入栏目名称</b>
-				 <span>编辑 添加栏目</span>
-				 预览
+	<div class="col-md-12"><h4>基本信息</h4></div>
+	<div class="col-md-12">
+		<div class="col-md-6">
+			<span class="pull-left">责任人</span>
+			<div class="dropdown pull-right" id="mydropdownPeople">
+				<button id="responsiblecom" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    选择责任单位
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="responsiblecom">
+				    <li ng-repeat="i in pepleData">{{i}}</li>
+				</ul>
 			</div>
-			<div class="text">
-				点击添加图片
-				<input class="form-control" type="file" rows="3">
-			</div>
-			<p>图片格式：jpg\png 图片大小：小于200k 建议尺寸：宽度大于800px</p>
+			<input class="form-control" id="disabledInputPeople" type="text" placeholder="张鑫，185020192181" disabled>
 		</div>
-		<div class="col-md-12">
-			<div class="title">
-				 <b>请输入栏目名称</b>
-				 <span>编辑 添加栏目</span>
-				 预览
+		<div class="col-md-6">
+		<span class="pull-left">责任人单位</span>
+			<div class="dropdown pull-right" id="mydropdownCon">
+				<button id="responsiblecom" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    选择责任单位
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="responsiblecom">
+				    <li ng-repeat="i in compnyData">{{i}}</li>
+				</ul>
 			</div>
-			<div class="text">
-				点击添加图片
-				<input class="form-control" type="file" rows="3">
-			</div>
-			<p>图片格式：jpg\png 图片大小：小于200k 建议尺寸：宽度大于800px</p>
+			<input class="form-control" id="disabledInputCon" type="text" placeholder="XXXXXX" disabled>
 		</div>
-		<div class="col-md-12">
-			<div class="title">
-				 <b>请输入栏目名称</b>
-				 <span>编辑 添加栏目</span>
-				 预览
-			</div>
-			<div class="text">
-				点击添加图片
-				<input class="form-control" type="file" rows="3">
-			</div>
-			<p>图片格式：jpg\png 图片大小：小于200k 建议尺寸：宽度大于800px</p>
-		</div>
-		<div class="col-md-12">
-			<div class="title">
-				 <b>请输入栏目名称</b>
-				 <span>编辑 添加栏目</span>
-				 预览
-			</div>
-			<div class="text">
-				点击添加图片
-				<input class="form-control" type="file" rows="3">
-			</div>
-			<p>图片格式：jpg\png 图片大小：小于200k 建议尺寸：宽度大于800px</p>
-		</div>
-		<div class="col-md-12 btn">
-			<span class="active">保存</span>
-		</div>
-		
+	</div>
+	<div class="col-md-12">
+		<p>请输入栏目名称</p>
+		<input class="form-control" id="disabledInput" type="text" placeholder="文本框内容">
+	</div>
+	<div class="col-md-12 up-img">
+		<upload-img data="1"></upload-img>
+	</div>
+	<div class="col-md-12 btn">
+		<span class="active">保存</span>
 	</div>
 </div>
+<script>
+	// $('.selectpicker').selectpicker({
+	// 	  // style: 'btn-info',
+	// 	  // size: 4
+	// 	})
+	// 	.on("change",function(){
+	// 		console.log($(".filter-option").text())
+			
+	// 	})
+
+</script>

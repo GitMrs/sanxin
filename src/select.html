@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+    <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover dataTable" ng-controller="my">
+            <thead>
+            <tr>
+                <th><input type="checkbox" ng-click="selectAll($event)" ng-checked="isSelectedAll()"/></th>
+                <th>姓名</th>
+                <th>单位</th>
+                <th>电话</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in content">
+                <td><input type="checkbox" name="selected" ng-checked="isSelected(item.id)" ng-click="updateSelection($event,item.id)"/></td>
+                <td>{{item.baseInfo.name}}</td>
+                <td>{{item.orgCompanyName}}</td>
+                <td>{{item.baseInfo.mobileNumberList[0].value}}</td>
+            </tr>
+            </tbody>
+        </table>
+</body>
+    <script src="../lib/angular.js"></script>
+    <script>
+        //创建变量用来保存选中结果
+        var app = angular.module("app",[])
+            app.controller("my",function($scope){
+                $scope.content = [
+                    {
+                        "baseInfo.name":"张胜"
+                    },
+                    {
+                        "baseInfo.name":"张胜"
+                    },
+                    {
+                        "baseInfo.name":"张胜"
+                    },
+                    {
+                        "baseInfo.name":"张胜"
+                    }
+                ]
+                 $scope.selected = [];
+                    var updateSelected = function (action, id) {
+                        if (action == 'add' && $scope.selected.indexOf(id) == -1) $scope.selected.push(id);
+                        if (action == 'remove' && $scope.selected.indexOf(id) != -1) $scope.selected.splice($scope.selected.indexOf(id), 1);
+                    };
+                    //更新某一列数据的选择
+                    $scope.updateSelection = function ($event, id) {
+                        var checkbox = $event.target;
+                        var action = (checkbox.checked ? 'add' : 'remove');
+                        updateSelected(action, id);
+                        console.log(action)
+                    };
+                    //全选操作
+                    $scope.selectAll = function ($event) {
+                        var checkbox = $event.target;
+                        var action = (checkbox.checked ? 'add' : 'remove');
+                        for (var i = 0; i < $scope.content.length; i++) {
+                            var contact = $scope.content[i];
+                            updateSelected(action, contact.id);
+                        }
+                    };
+                    $scope.isSelected = function (id) {
+                        return $scope.selected.indexOf(id) >= 0;
+                    };
+                    $scope.isSelectedAll = function () {
+                        return $scope.selected.length === $scope.content.length;
+                    };
+            })
+               
+            
+                    
+    </script>
+</html>

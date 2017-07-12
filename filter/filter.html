@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- <link rel="stylesheet" href="skin/laypage.css"> -->
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none
+	}
+
+	table td,table th{
+		width: 100px;
+		text-align: center;
+		line-height: 30px;
+		border: 1px solid #ccc;
+	}
+	table tr{
+
+	}
+</style>
+<body>
+	<p><input type="text" class="val"> <button id="btn">搜索</button></p>
+	<table style="border: 1px solid #ccc">
+		<thead>
+			<tr>
+				<th></th>
+				<th class="up">Username </th>
+				<th>Email</th>
+				<th class="up">Points</th>
+				<th>Joined</th>
+			</tr>
+		</thead>
+		<tbody id="main">
+			<tr>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td>111</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- <div id="biuuu_city_list"></div> -->
+	<div id="page"></div>
+	
+	<script src="jquery.js"></script>
+	<script src="laypage.js"></script>
+	<script>
+		let data = [
+			{
+				"Username":"coop1",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop2",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop3",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop4",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop5",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop7",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop8",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop9",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop10",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			},
+			{
+				"Username":"coop11",
+				"Email":"good@gmail.com",
+				"Points":"20",
+				"Joined":"19.11.2010"
+			}
+		]
+		let str="";
+		let i=0;
+		var arr= [1,2,3,4]
+		// var t=data.reverse()
+		// console.log(t)
+		$(".up").on("click",function(){
+			var arr = data.reverse().map(function(v){
+				return v
+			})
+			t=arr.splice(0,3)
+//			console.log(t)
+				rander(t)
+		})
+		$("#btn").on("click",function(){
+			var val = $(".val").val()
+			var tt = []
+			data.forEach(function(i){
+				if(i.Username.includes(val)){
+					tt.push(i)
+				}
+			})
+			rander(tt)
+		})
+		// rander(data)
+
+		function rander(data){
+			data.forEach(function(i){
+			str+="<tr></td><td>"
+			for(var v in i){
+				// str+="<td></td>"
+				str+="<td>"+i[v]+"</td>"
+			}
+				str+="</tr>"
+			})
+			$("#main").html(str)
+			str=""
+		}
+		var nums = 1
+		var renders = function(data, curr){
+			var arr = [];
+			thisData = data.concat().splice(curr*nums-nums, nums);
+			thisData.forEach(function(i){
+				var str="";
+				str+="<tr></td><td>"
+				for(var v in i){
+					// str+="<td></td>"
+					str+="<td>"+i[v]+"</td>"
+				}
+					str+="</tr>"
+					arr.push(str)
+			})
+			console.log(str)
+			console.log(arr)
+			return arr.join('');
+		}
+  //调用分页
+  laypage({
+    cont: 'page'
+    ,pages: Math.ceil(data.length/nums)//得到总页数
+    ,skin:"#ff0"
+    ,hash:"id"
+    ,jump: function(obj){
+      document.getElementById('main').innerHTML = renders(data, obj.curr);
+    }
+  });
+	</script>
+</body>
+</html>

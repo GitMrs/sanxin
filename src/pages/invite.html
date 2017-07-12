@@ -1,15 +1,15 @@
-<div class="main col-md-12 apply">	
+<div class="main  apply">	
 				<div class="top1">
 					<h4>邀请名单</h4>
 					<button type="button" class="btn-lg add" data-toggle="modal" data-target="#dialogBox">
 					添加居民
 					</button>
-					<a href="">短信通知</a>
+					<a href="">短信通知{{checks}}</a>
 				</div>
 				<table class="table text-center">
 					<thead>
 						<tr class="active">
-							<td><input type="checkbox" /></td>
+							<td><input type="checkbox" class="all" ng-model="master" ng-click="all(master,tesarry)"></td>
 							<td>居民姓名</td>
 							<td>练习电话</td>
 							<td>姓名</td>
@@ -20,71 +20,38 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td>张大爷一致强烈要求参加此活动</td>
-							<td><span>查看详情</span><span>删除</span></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td></td>
-							<td><span>查看详情</span><span>删除</span></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td></td>
-							<td><span>查看详情</span><span>删除</span></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td>张大爷一致强烈要求参加此活动</td>
-							<td><span>查看详情</span><span>删除</span></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td></td>
-							<td><span>查看详情</span><span>删除</span></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /></td>
-							<td>张三</td>
-							<td>18316520036</td>
-							<td>男</td>
-							<td>65</td>
-							<td>已通过</td>
-							<td></td>
-							<td><span>查看详情</span><span>删除</span></td>
+						<tr ng-repeat="i in activeList">
+							<td><input type="checkbox" class="cb" ng-model="x" ng-checked="master" ng-click="chk(z,x)"></td>
+							<td>{{i.name}}</td>
+							<td>{{i.tel}}</td>
+							<td>{{i.sex}}</td>
+							<td>{{i.age}}</td>
+							<td>{{i.state}}</td>
+							<td>{{i.info}}</td>
+							<td><span>{{i.chart}}</span><span>{{i.detail}}</span><span>{{i.detele}}</span></td>
 						</tr>
 					</tbody>
 					</table>
-			</div>
-
-
+						<nav aria-label="Page navigation">
+						  <ul class="pagelist">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+					</div>
 <div class="modal fade" id="dialogBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content main">
@@ -107,7 +74,6 @@
 			</div>
 		</div>
       </div>
-     	 
       <!--<div class="modal-footer">-->
         <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->

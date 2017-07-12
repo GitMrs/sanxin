@@ -9,7 +9,7 @@
 	<div class="item" ng-repeat="i in data">
 		<p  data-toggle="collapse" data-target="#{{i.type}}">{{i.name}}</p>
 		<ul class="collapse" id="{{i.type}}">
-			<li ng-repeat="x in i.submenus" >{{x.name}}</li>
+			<li ng-repeat="x in i.submenus" ui-sref="index.{{x.url}}({id:{{x.id}}})" >{{x.name}}</li>
 		</ul>
 	</div>
 </div>
@@ -23,13 +23,6 @@
 					<li role="presentation"><a href="#" ng-class="{active:Tnav==3}"  ng-click="Tfn(3)">公共服务平台</a></li>
 					<li role="presentation"><a href="#" ng-class="{active:Tnav==4}" ng-click="Tfn(4)">网络化管理平台</a></li>
 				</ul>
-			</div>
-			<div class="col-md-12">
-				<p>...>社区社区</p>
-				<div class="btn">
-					<a ui-sref="index.message"><span ng-class="{active:state==1}" ng-click="nav(1)">信息管理</span></a>
-					<a ui-sref="index.play"><span ng-class="{active:state==2}" ng-click="nav(2)">活动管理</span></a>
-				</div>
 			</div>
 			<div class="col-md-12" ui-view>
 				
